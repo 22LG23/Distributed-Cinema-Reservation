@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Cinema</title>
+	<script type="text/javascript" src="./js/utility.js"></script>
+	<script type="text/javascript" src="./js/seatsMatrixTableDOM.js"></script>
+	<script type="text/javascript" src="./js/cinema.js"></script>
+	<script type="text/javascript" src="./js/projectionsDOM.js"></script>
+	<script type="text/javascript" src="./js/reservationsDOM.js"></script>
+	<script type="text/javascript" src="./js/manageReservationDOM.js"></script>
+</head>
+
+<body>
+	<div id="homepage">
+		<button id="btn-projections">Mostra lista proiezioni</button><br>
+		<button id="btn-manage-reservation">Gestisci prenotazione</button>
+	</div>
+	<div id="projections">
+		<h2>Proiezioni</h2>
+		<table id="tabella-proiezioni" border="1">
+			<thead>
+				<tr>
+					<!-- <th></th> -->
+					<th>Film</th>
+					<th>Durata (minuti)</th>
+					<th>Sala</th>
+					<th>Giorno</th>
+					<th>Orario</th>
+				</tr>
+			</thead>
+			<tbody id="table-body-proiezioni">
+			</tbody>
+		</table>
+		<button class="goto-homepage">Homepage</button>
+	</div>
+
+	<div id="reservations">
+		<h2 id="info-prenotazione">Prenotazione</h2>
+		<table id="seleziona-posti" border="1">
+		</table>
+		<form id="form-prenotazione">
+			<label for="posti">Posti selezionati:</label>
+			<input type="text" id="posti" name="posti" value="" readonly><br>
+			<input type="text" id="id-proiezione" readonly hidden>
+			<button type="submit">Prenota</button>
+			<button type="button" class="goto-homepage">Homepage</button>
+		</form>
+	</div>
+
+	<hr />
+
+	<div id="manage-reservation">
+		<h2>Gestisci la tua prenotazione</h2>
+		<form id="form-cerca-prenotazione">
+			<label for="id-prenotazione">Codice prenotazione</label>
+			<input type="text" id="id-prenotazione" name="id-prenotazione">
+			<button type="submit">Ricerca prenotazione</button><br>
+			<button type="button" class="goto-homepage">Homepage</button>
+		</form>
+		<div id="div-modifica-prenotazione" style="display: none">
+			<h2 id="info-modifica-prenotazione"></h2>
+			<p>I posti selezionati sono quelli prenotati, deselezionali e premi il bottone "Elimina posti" per eliminarli</p>
+			<table id="tabella-modifica-prenotazione" border="1">
+			</table>
+			<form id="modifica-prenotazione">
+				<label for="posti-da-cancellare">Posti da cancellare:</label>
+				<input type="text" id="posti-da-cancellare" name="posti-da-cancellare" value="" readonly><br>
+				<input type="text" id="id-proiezione-mod" readonly hidden>
+				<input type="text" id="id-prenotazione-mod" readonly hidden>
+				<input type="text" id="id-posti-da-cancellare" readonly hidden>
+				<button type="submit">Elimina posti</button>
+			</form>
+			<form id="cancella-prenotazione">
+				<button type="submit">Elimina prenotazione</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		window.onload = init();
+
+		function init() {
+			showHomepage();
+			setEvents();
+		}
+	</script>
+</body>
+
+</html>
