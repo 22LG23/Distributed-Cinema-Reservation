@@ -1,6 +1,6 @@
 # Progetto Sistemi Distribuiti 2023-2024
 
-Il progetto d’esame del corso di “Sistemi Distribuiti” dell’anno 2022-2023 consiste nella progettazione e sviluppo di un’applicazione distribuita per la 
+Il progetto d’esame del corso di “Sistemi Distribuiti” dell’anno 2023-2024 consiste nella progettazione e sviluppo di un’applicazione distribuita per la 
 prenotazione di posti di proiezioni cinematografiche in un cinema.
 
 - **Client Web**: un’interfaccia per la prenotazione e gestione di posti in un
